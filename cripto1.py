@@ -30,3 +30,57 @@ def fac(n):
         return 0
     else:
         return fac(n - 1) * n
+
+    
+# 28-oct
+
+def vigenere(text):
+    tn = normalizar(text)
+    word = input("Introduce la palabra para cifrar:")
+    word = normalizar(word)
+    while len(word) < len(tn):
+        word += word
+    tv=""
+    for i in range(len(tn)):
+        for j in range(len(word)):
+            if i == j:
+                index = ord(tn[i]) + ord(word[j])-65
+                while index > 90:
+                    index = index - 26
+                tv += chr(index)
+    return tv
+    
+
+def afin(text):
+    print("Cifrado tipo ax+b")
+    #Cesar: a = 1
+    #usa ord("a") = 0
+    tn = normalizar(text)
+    taf = ""
+    a = input("Introduce el multiplicador a:")
+    b = input ("Introduce la constante b:")
+    for letra in tn:
+        index = (ord(letra)-65)*a + b + 65
+        while index > 90:
+            index = index - 26
+        taf += chr(index)
+    return taf
+            
+    
+def railfence(text):
+    t1 = ""
+    t2 = ""
+    t3 = ""
+    #t4 = ""
+    #t5 = ""
+    trf = ""
+    #n = input("Elige un numero de railes entre 2 y 5:)
+    for i in range(len(text)):
+        if i % 3 == 0:
+            t1 += text[i]
+        elif i % 3 == 1:
+            t2 += text[i]
+        elif i % 3 == 2:
+            t3 += text[i]
+    trf += t1 + t2 + t3 #podria cambiar el orden de la suma
+    return trf
