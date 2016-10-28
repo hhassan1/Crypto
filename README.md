@@ -1,4 +1,4 @@
 # Crypto
-Criptography algorithms
+Cryptography algorithms
 
 Final Degree Project
