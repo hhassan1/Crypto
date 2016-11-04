@@ -84,3 +84,19 @@ def railfence(text):
             t3 += text[i]
     trf += t1 + t2 + t3 #podria cambiar el orden de la suma
     return trf
+
+def decr_vigenere(text):
+    tn = normalizar(text)
+    word = input("Introduce la palabra para descifrar:")
+    word = normalizar(word)
+    while len(word) < len(tn):
+        word += word
+    tdv =""
+    for i in range(len(tn)):
+        for j in range(len(word)):
+            if i == j:
+                index = ord(tn[i]) - ord(word[j]) + 65
+                while index < 65:
+                    index = index + 26
+                tdv += chr(index)
+    return tdv
