@@ -101,6 +101,8 @@ def decr_vigenere(text):
                 tdv += chr(index)
     return tdv
 
+#
+
 def beaufort(text):
     tn = normalizar(text)
     word = input("Introduce la palabra para cifrar:")
