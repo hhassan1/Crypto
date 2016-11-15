@@ -100,3 +100,19 @@ def decr_vigenere(text):
                     index = index + 26
                 tdv += chr(index)
     return tdv
+
+def beaufort(text):
+    tn = normalizar(text)
+    word = input("Introduce la palabra para cifrar:")
+    word = normalizar(word)
+    while len(word) < len(tn):
+        word += word
+    tb=""
+    for i in range(len(tn)):
+        for j in range(len(word)):
+            if i == j:
+                index = - ord(tn[i]) + ord(word[j]) + 65
+                while index < 65:
+                    index = index + 26
+                tb += chr(index)
+    return tb
