@@ -42,12 +42,12 @@ def vigenere(text):
         word += word
     tv=""
     for i in range(len(tn)):
-        for j in range(len(word)):
-            if i == j:
-                index = ord(tn[i]) + ord(word[j])-65
-                while index > 90:
-                    index = index - 26
-                tv += chr(index)
+      #  for j in range(len(word)):  
+      #      if i == j:
+        index = ord(tn[i]) + ord(word[i])-65   #word[j], indexar
+        while index > 90:
+            index = index - 26
+        tv += chr(index)
     return tv
     
 
@@ -110,11 +110,9 @@ def beaufort(text):
     while len(word) < len(tn):
         word += word
     tb=""
-    for i in range(len(tn)):
-        for j in range(len(word)):
-            if i == j:
-                index = - ord(tn[i]) + ord(word[j]) + 65
-                while index < 65:
-                    index = index + 26
-                tb += chr(index)
+    for i in range(len(tn)):   
+        index = - ord(tn[i]) + ord(word[i]) + 65
+        while index < 65:
+            index = index + 26
+        tb += chr(index)
     return tb
